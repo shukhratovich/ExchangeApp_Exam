@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        tools:layout="@layout/screen_main"
+        android:name="com.example.exchangeappexam.presentation.ui.MainScreen"
+        android:label="MainScreen" >
+        <action
+            android:id="@+id/action_mainScreen_to_conversionScreen"
+            app:destination="@id/conversionScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_conversion"
+        android:id="@+id/conversionScreen"
+        android:name="com.example.exchangeappexam.presentation.ui.ConversionScreen"
+        android:label="ConversionScreen" >
+        <argument
+            android:name="currency"
+            app:argType="com.example.exchangeappexam.data.model.CurrencyModel" />
+    </fragment>
+</navigation>
